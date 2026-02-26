@@ -1,0 +1,43 @@
+.container {
+    width: 1200px;  
+    /* compresses the window */
+    display: grid;
+    grid-template-columns: 30% 30% 30% 30%; 
+    /* column sizes */
+
+}
+
+.collection_sidebar {
+    background-color: rosybrown;
+    min-height: 100px;
+}
+
+.collection_gallery {
+    min-height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+
+
+
+
+
+.header {
+    min-height:400px;
+    background:red;
+    grid-column: span 5;
+}
+
+.second {
+    min-height: 500px;
+    background-color: green;
+
+}
+
+.square {
+    background:blue;
+    width:300px;
+    height:300px;
+    border:1px solid red;
+}
