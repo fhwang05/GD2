@@ -1,5 +1,5 @@
 h1 {
-    color: dimgray;
+    color: rgb(84, 96, 70);
     font-size: 65px;
     font-family: Arial;
     width: 95%;
@@ -7,8 +7,15 @@ h1 {
     margin: 20px;
 }
 
+h2 {
+    color:rgb(85, 95, 63);
+    font-family: Arial, Helvetica, sans-serif;
+    width: 300px;
+    margin-left: 50px;
+}
+
 body {
-    background-color: #D9D9D9;
+    background-color: #2f3923;
     /* text-align: center; */
     margin: 0;
 }
