@@ -1,0 +1,81 @@
+html {
+    background-color: rgb(15, 35, 52);
+    /* margin-left: 8rem;
+    margin-right: 8rem; */
+}
+
+h2{
+    font-family: "Cascadia Mono", sans-serif;
+    font-weight: 700;
+    font-size: 150px;
+    color:rgb(214, 127, 20);
+    text-align: center;
+    line-height: .6;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+h3 {
+    font-family: "Cascadia Mono", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    color:rgba(234, 185, 124, 0.8);
+    background-color: rgba(12, 22, 29, 0.86)
+
+}
+
+h4 {
+    font-family: "Cascadia Mono", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 30px;
+    font-weight: 200;
+    color:rgb(161, 96, 15);
+    margin-left: 8rem;
+
+}
+
+h5 {
+    font-family: "Cascadia Mono", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 15px;
+    font-weight: 200;
+    color:rgb(161, 96, 15);
+    margin-right: 8rem;
+}
+
+h6 {
+    font-family: "Cascadia Mono", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 15px;
+    font-weight: 200;
+    color:rgba(234, 185, 124, 0.8);
+    background-color: rgba(12, 22, 29, 0.86)
+    /* margin-left: 8rem;
+    margin-right: 8rem; */
+}
+
+p {
+    font-family: "Cascadia Mono", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    color:rgb(161, 96, 15);
+    margin-right: 8rem;
+    margin-left: 8rem;
+    margin-top: 20rem;
+}
+
+.columns-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 0px;
+
+}
+
+.cascadia-mono-titlefont {
+  font-family: "Cascadia Mono", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
