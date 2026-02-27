@@ -4,14 +4,17 @@ h1 {
     font-family: Arial;
     width: 95%;
     text-align: left;
-    margin: 20px;
+    margin-left: 10px;
+    margin-top: -5px;
 }
 
 h2 {
     color:rgb(85, 95, 63);
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
-    width: 300px;
-    margin-left: 50px;
+    width: 200px;
+    margin-left: 10px;
+    margin-top: -40px;
 }
 
 body {
@@ -37,7 +40,7 @@ body {
 .column img {
   margin-top: 8px;
   vertical-align: middle;
-  max-width: 1100px;
+  max-width: 550px;
 }
 
 .image-container {
@@ -45,7 +48,7 @@ body {
     /* Enables Flexbox layout */
     justify-content: center;
     /* Centers images horizontally in the container */
-    gap: 50px;
+    gap: 20px;
     /* Adds space between images */
 }
 
