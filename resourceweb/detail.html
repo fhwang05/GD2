@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMORY FOAM</title>
+    <link rel="stylesheet" href="./website.css">
+</head>
+
+<body>
+
+    <header class="banner">
+        <div class="banner-top">
+            <div class="banner-title">
+                <h1><strong>MEMORY FOAM</strong></h1>
+                <h2>The Lasting Effects Of The World</h2>
+            </div>
+        </div>
+        <nav class="banner-nav">
+            <button class="nav-btn" onclick="history.back()">← Back</button>
+        </nav>
+    </header>
+
+    <main class="content detail-layout">
+        <div class="detail-image">
+            <img id="detail-img" src="" alt="">
+        </div>
+        <p class="detail-desc" id="detail-desc"></p>
+    </main>
+
+    <script>
+        const descriptions = {
+            'images/darwins finches.jpg': {
+                title: "Darwin's Finches",
+                section: 'ENVIRONMENTAL',
+                desc: "Darwin's finches are a group of about 18 bird species found on the Galápagos Islands. Their remarkable variation in beak shape — each adapted to a different food source — provided Charles Darwin with key evidence for natural selection. The lasting impression of environmental pressure, written into the very anatomy of a species."
+            },
+            'images/hurricane katrina.png': {
+                title: "Hurricane Katrina",
+                section: 'ENVIRONMENTAL',
+                desc: "Hurricane Katrina struck the Gulf Coast of the United States in August 2005, becoming one of the deadliest and most destructive Atlantic hurricanes on record. The storm's surge reshaped coastlines, displaced communities, and left permanent marks on the urban and natural landscape of New Orleans and surrounding regions."
+            },
+            'images/fire.png': {
+                title: "Fire",
+                section: 'ENVIRONMENTAL',
+                desc: "Wildfire is both a destroyer and a renewer. Burning through ecosystems with indiscriminate force, fire clears the old and creates space for new growth. Yet the scars it leaves — charred earth, altered soil chemistry, reshaped habitats — persist long after the flames have passed, imprinting the land with a record of what once burned."
+            },
+            'images/Screenshot 2026-02-27 013555.png': {
+                title: "Landscape Record",
+                section: 'ENVIRONMENTAL',
+                desc: "Aerial and satellite imagery captures the accumulated imprint of human and natural activity on the land. Roads, field boundaries, drainage channels and settlement patterns visible from above tell the story of forces — economic, ecological, geological — that have shaped the terrain over centuries."
+            },
+            'images/door handle 1.jpg': {
+                title: "Door Handles",
+                section: 'DESIRE LINES',
+                desc: "description."
+            },
+            'images/checkout pad.jpg': {
+                title: "Desire Path",
+                section: 'DESIRE LINES',
+                desc: "description."
+            },
+            'images/keyboard.jpg': {
+                title: "Desire Path",
+                section: 'DESIRE LINES',
+                desc: "description."
+            },
+            'images/desire stairs.jpg': {
+                title: "Desire Stairs",
+                section: 'DESIRE LINES',
+                desc: "description."
+            },
+            'images/hospital chairs.jpg': {
+                title: "Desire Path",
+                section: 'DESIRE LINES',
+                desc: "description."
+            },
+            'images/dog statue.jpg': {
+                title: "Desire Path",
+                section: 'DESIRE LINES',
+                desc: "description."
+            },
+            'images/small desire path.jpg': {
+                title: "Desire Path",
+                section: 'DESIRE LINES',
+                desc: "description."
+            },
+            'images/middle seat.jpg': {
+                title: "Desire Path",
+                section: 'DESIRE LINES',
+                desc: "description."
+            },
+            'images/auto door open.jpg': {
+                title: "Desire Path",
+                section: 'DESIRE LINES',
+                desc: "description."
+            },
+            
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const imgSrc = params.get('img');
+
+        if (imgSrc && descriptions[imgSrc]) {
+            const data = descriptions[imgSrc];
+            document.getElementById('detail-img').src = imgSrc;
+            document.getElementById('detail-img').alt = data.title;
+            document.getElementById('detail-desc').textContent = data.desc;
+document.title = data.title + ' — MEMORY FOAM';
+        }
+    </script>
+
+</body>
+
+</html>

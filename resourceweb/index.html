@@ -6,60 +6,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEMORY FOAM</title>
     <link rel="stylesheet" href="./website.css">
-    <!-- <style>
-    @font-face {
-  font-family: Rubik; /* set name */
-  src: url(https://fonts.google.com/specimen/Rubik?query=rubik); /* url of the font */
-  font-weight: bold;
-
-}
-* {
-   font-family: Rubik;/* use font */
-}</style> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
-    <h1>
-        <strong>MEMORY FOAM</strong>
-    </h1>
-    <h2>
-        The Lasting Effects Of The World
-    </h2>
-    <p>
 
-    </p>
-    <div class="image-container">
-        <img src="./images/Untitled-1-04.png" style="max-width: 40%;" alt="light">
-        <img src="./images/Untitled-1-05.png" style="max-width: 40%;" alt="medium">
-        <img src="./images/Untitled-1-06.png" style="max-width: 40%;" alt="heavy">
-    </div>
+    <!-- top banner -->
+    <header class="banner">
+        <div class="banner-top">
+            <div class="banner-title">
+                <h1><strong>MEMORY FOAM</strong></h1>
+                <h2>The Lasting Effects Of The World</h2>
+            </div>
+        </div>
+        <nav class="banner-nav">
+            <button class="nav-btn" data-target="#overview">Overview</button>
+        </nav>
+    </header>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <!-- contents -->
+    <main class="content">
 
-    <div class="row">
-        <div class="column">
-            <img src="images/darwins finches.jpg">
-            <img src="images/Screenshot 2026-02-27 013555.png">
-            <img src="images/hurricane katrina.png">
-            <img src="images/fire.png">
-        </div>
-        <div class="column">
-            <img src="images/hurricane katrina.png">
-            <img src="images/darwins finches.jpg">
-            <img src="images/fire.png">
-            <img src="images/Screenshot 2026-02-27 013555.png">
-        </div>
-        <div class="column">
-            <img src="images/Screenshot 2026-02-27 013555.png">
-            <img src="images/fire.png">
-            <img src="images/darwins finches.jpg">
-            <img src="images/hurricane katrina.png">
-        </div>
-    </div>
+        <section id="overview">
+            <h3>Overview</h3>
+            <div class="overview-sections">
+                <img src="images/fingerprint 3.png" alt="Section 1" class="section-link" data-target="#environmental">
+                <img src="images/converse sole.png" alt="Section 3" class="section-link" data-target="#desire-lines">
+                <img src="images/overview/section-2.png" alt="Section 2" class="section-link" data-target="#about">
+            </div>
+        </section>
+
+        <section id="environmental">
+            <h3>Environmental</h3>
+            <div class="row">
+                <div class="column">
+                    <img src="images/darwins finches.jpg" alt="Darwin's Finches" class="detail-link">
+                    <img src="images/Screenshot 2026-02-27 013555.png" alt="Screenshot" class="detail-link">
+                    <img src="images/hurricane katrina.png" alt="Hurricane Katrina" class="detail-link">
+                    <img src="images/fire.png" alt="Fire" class="detail-link">
+                </div>
+                <div class="column">
+                    <img src="images/hurricane katrina.png" alt="Hurricane Katrina" class="detail-link">
+                    <img src="images/darwins finches.jpg" alt="Darwin's Finches" class="detail-link">
+                    <img src="images/fire.png" alt="Fire" class="detail-link">
+                    <img src="images/Screenshot 2026-02-27 013555.png" alt="Screenshot" class="detail-link">
+                </div>
+                <div class="column">
+                    <img src="images/Screenshot 2026-02-27 013555.png" alt="Screenshot" class="detail-link">
+                    <img src="images/fire.png" alt="Fire" class="detail-link">
+                    <img src="images/darwins finches.jpg" alt="Darwin's Finches" class="detail-link">
+                    <img src="images/hurricane katrina.png" alt="Hurricane Katrina" class="detail-link">
+                </div>
+            </div>
+        </section>
+
+        <section id="desire-lines">
+            <h3>Desire Lines</h3>
+            <div class="row">
+                <div class="column">
+                    <img src="images/door handle 1.jpg" alt="Door Handles" class="detail-link">
+                    <img src="images/checkout pad.jpg" alt="Checkout Pad" class="detail-link">
+                    <img src="images/keyboard.jpg" alt="Enter Key" class="detail-link">
+                    <img src="images/desire stairs.jpg" alt="Desire Stairs" class="detail-link">
+                    <img src="images/hospital chairs.jpg" alt="Hospital Chairs" class="detail-link">
+                    <img src="images/dog statue.jpg" alt="Dog Relief Statue" class="detail-link">
+                    <img src="images/small desire path.jpg" alt="Desire Path" class="detail-link">
+                    <img src="images/middle seat.jpg" alt="Middle Seat" class="detail-link">
+                    <img src="images/auto door open.jpg" alt="Door Button" class="detail-link">
+                </div>
+                <div class="column">
+                    <img src="images/desire stairs.jpg" alt="Desire Stairs" class="detail-link">
+                    <img src="images/middle seat.jpg" alt="Middle Seat" class="detail-link">
+                    <img src="images/hospital chairs.jpg" alt="Hospital Chairs" class="detail-link">
+                    <img src="images/door handle 1.jpg" alt="Door Handles" class="detail-link">
+                    <img src="images/small desire path.jpg" alt="Desire Path" class="detail-link">
+                    <img src="images/dog statue.jpg" alt="Dog Relief Statue" class="detail-link">
+                    <img src="images/checkout pad.jpg" alt="Checkout Pad" class="detail-link">
+                    <img src="images/auto door open.jpg" alt="Door Button" class="detail-link">
+                    <img src="images/keyboard.jpg" alt="Enter Key" class="detail-link">
+                </div>
+                <div class="column">
+                    <img src="images/small desire path.jpg" alt="Desire Path" class="detail-link">
+                    <img src="images/keyboard.jpg" alt="Enter Key" class="detail-link">
+                    <img src="images/hospital chairs.jpg" alt="Hospital Chairs" class="detail-link">
+                    <img src="images/middle seat.jpg" alt="Middle Seat" class="detail-link">
+                    <img src="images/auto door open.jpg" alt="Door Button" class="detail-link">
+                    <img src="images/checkout pad.jpg" alt="Checkout Pad" class="detail-link">
+                    <img src="images/desire stairs.jpg" alt="Desire Stairs" class="detail-link">
+                    <img src="images/door handle 1.jpg" alt="Door Handles" class="detail-link">
+                    <img src="images/dog statue.jpg" alt="Dog Relief Statue" class="detail-link">
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h3>About</h3>
+            <p class="about-text">
+                This website is an archive that explored the lasting effects left on our world by natural events. Like how memory foam keeps the shape of the object that applied pressure to it, our Earth holds the marks made by pressure forces, from evolution to disasters.
+                <br>
+                So what exactly are lasting effects?
+                <br>
+                Why do lasting effects matter and what kind of impacts do they have on us?
+            </p>
+        </section>
+
+    </main>
+
+    <script>
+        $(document).ready(function () {
+
+            // Keep content below the fixed banner
+            function updateContentPadding() {
+                var bannerHeight = $('.banner').outerHeight();
+                $('.content').css('padding-top', bannerHeight + 'px');
+            }
+
+            updateContentPadding();
+            $(window).on('resize', updateContentPadding);
+
+            // Smooth scroll to section on nav button click
+            $('.nav-btn').on('click', function () {
+                var target = $(this).data('target');
+                var bannerHeight = $('.banner').outerHeight();
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top - bannerHeight
+                }, 600);
+            });
+
+            // Navigate to detail page on environmental/desire-lines image click
+            $('.detail-link').on('click', function () {
+                var imgSrc = $(this).attr('src');
+                window.location.href = 'detail.html?img=' + encodeURIComponent(imgSrc);
+            });
+
+            // Smooth scroll on overview section image click
+            $('.section-link').on('click', function () {
+                var target = $(this).data('target');
+                var bannerHeight = $('.banner').outerHeight();
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top - bannerHeight
+                }, 600);
+            });
+
+        });
+    </script>
 
 </body>
 
