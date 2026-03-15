@@ -1,0 +1,85 @@
+/* Standard Book */
+@font-face {
+    font-family: 'Standard';
+    src: url('font/webfonts/standard-book-webfont.woff2') format('woff2'),
+        url('font/webfonts/standard-book-webfont.woff') format('woff'),
+        url('font/webfonts/standard-book-webfont.ttf') format('truetype'),
+        url('font/webfonts/standard-book-webfont.eot');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Standard Book Italic */
+@font-face {
+    font-family: 'Standard';
+    src: url('font/webfonts/standard-book-italic-webfont.woff2') format('woff2'),
+        url('font/webfonts/standard-book-italic-webfont.woff') format('woff'),
+        url('font/webfonts/standard-book-italic-webfont.ttf') format('truetype'),
+        url('font/webfonts/standard-book-italic-webfont.eot');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Standard Bold */
+@font-face {
+    font-family: 'Standard';
+    src: url('font/webfonts/standard-bold-webfont.woff2') format('woff2'),
+        url('font/webfonts/standard-bold-webfont.woff') format('woff'),
+        url('font/webfonts/standard-bold-webfont.ttf') format('truetype'),
+        url('font/webfonts/standard-bold-webfont.eot');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Standard Bold Italic */
+@font-face {
+    font-family: 'Standard';
+    src: url('font/webfonts/standard-bold-italic-webfont.woff2') format('woff2'),
+        url('font/webfonts/standard-bold-italic-webfont.woff') format('woff'),
+        url('font/webfonts/standard-bold-italic-webfont.ttf') format('truetype'),
+        url('font/webfonts/standard-bold-italic-webfont.eot');
+    font-weight: 700;
+    font-style: italic;
+}
+
+body {
+    font-family: 'Standard';
+    background: #e0e1dd;
+    color: #081b2b;
+}
+
+header {
+    background: #081b2b;
+    color: #e0e1dd;
+    text-align: center;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+main {
+    max-width: 1300px;
+    margin: 10rem auto;
+}
+
+img {
+    max-width: 100%
+}
+
+.primary {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 20px;
+}
+
+.secondary {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-column-gap: 20px;
+}
