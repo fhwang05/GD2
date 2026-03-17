@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMORY FOAM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik+Maps&family=Rubik+Puddles&family=Rubik+Spray+Paint&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+</head>
+<body>
+
+    <!-- top banner -->
+    <header class="banner">
+        <div class="banner-top">
+            <div class="banner-title">
+                <h1><strong>MEMORY FOAM</strong></h1>
+                <h2>Archive of the Lasting Effects on Earth left <br>
+                     by Different Types of Pressure
+                </h2>
+            </div>
+        </div>
+        <!-- <nav class="banner-nav">
+            <button class="nav-btn" data-target="#overview">Overview</button>
+        </nav> -->
+    </header>
+    
+        <section id="masonry">
+            <h3>Masonry Grid</h3>
+            <div class="masonry">
+                <img src="images/desire stairs.jpg" alt="Desire Stairs" class="masonry-item">
+                <img src="images/dog statue.jpg" alt="Dog Statue Relief" class="masonry-item">
+                <img src="images/door handle 1.jpg" alt="Door Handles" class="masonry-item">
+                <img src="images/small desire path.jpg" alt="Desire Path" class="masonry-item">
+                <img src="images/middle seat.jpg" alt="Middle Seat" class="masonry-item">
+                <img src="images/keyboard.jpg" alt="Keyboard" class="masonry-item">
+            </div>
+        </section>
+
+<script>
+var grid = document.querySelector('.grid');
+
+var msnry = new Masonry(grid, {
+  itemSelector: '.grid-item',
+  columnWidth: 200,
+  gutter: 10
+});
+</script>
+
+</body>
+</html>

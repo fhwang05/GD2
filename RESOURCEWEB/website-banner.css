@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #383D23;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---- banner ---- */
+
+.banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #727748;
+    z-index: 1000;
+    padding: 10px 16px;
+}
+
+.banner-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+}
+
+.banner-title {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 100px);
+    column-gap: 20px;
+    justify-content: center;
+    align-items: baseline;
+    width: min(1400px, 100%);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.banner-title h1 {
+    color: #383D23;
+    font-size: 55px;
+    font-family: Arial;
+    margin: 0;
+    line-height: 1;
+    grid-column: 1 / span 4;
+    align-self: baseline;
+}
+
+.banner-title h2 {
+    color: #BCBD8F;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    line-height: 1.2;
+    grid-column: 6 / span 6;
+    align-self: baseline;
+    max-width: 500px;
+}
+
+.banner-nav {
+    display: flex;
+    gap: 8px;
+    padding: 4px 0;
+    margin-top: 4px;
+    border-top: 1px solid rgba(84, 96, 70, 0.3);
+}
+
+.nav-btn {
+    background: transparent;
+    border: 1px solid rgb(84, 96, 70);
+    color: rgb(84, 96, 70);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    padding: 5px 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-btn:hover {
+    background: rgb(84, 96, 70);
+    color: #2f3923;
+}
+
+.masonry {
+    column-width: 100px;
+    column-gap: 20px;
+    width: min(1200px, 95%);
+    margin: 110px auto 20px;
+}
+
+.masonry-item {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 12px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 8px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 6px;
+    break-inside: avoid;
+}
