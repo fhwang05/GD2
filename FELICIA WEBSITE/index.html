@@ -17,39 +17,104 @@
     <!-- top banner -->
     <header class="banner">
         <div class="banner-top">
-            <div class="banner-title">
-                <h1><strong>MEMORY FOAM</strong></h1>
-                <h2>Archive of the Lasting Effects on Earth left <br>
-                     by Different Types of Pressure
-                </h2>
-            </div>
+            <h1><strong>MEMORY FOAM</strong></h1>
+            <h2>Archive of the Lasting Effects on Earth left by Different Types of Pressure</h2>
         </div>
-        <!-- <nav class="banner-nav">
-            <button class="nav-btn" data-target="#overview">Overview</button>
-        </nav> -->
+        <div class="banner-actions">
+            <button class="banner-btn" onclick="window.location.href='about.html'">ABOUT</button>
+        </div>
     </header>
-    
+
+    <nav class="filter-nav">
+        <button class="filter-btn" data-filter=".evolution">EVOLUTION</button>
+        <button class="filter-btn" data-filter=".water">WATER</button>
+        <button class="filter-btn" data-filter=".environmental">ENVIRONMENTAL</button>
+        <button class="filter-btn" data-filter=".architectural">ARCHITECTURAL</button>
+        <button class="filter-btn" data-filter=".repetitive-wear">REPETITIVE WEAR</button>
+        <button class="filter-btn" data-filter=".absence">ABSENCE</button>
+    </nav>
+
+    <!-- SVG blob clip shapes (shared with detail.html) -->
+    <svg width="0" height="0" style="position:absolute">
+        <defs>
+            <clipPath id="image-mask-1" clipPathUnits="objectBoundingBox">
+                <path d="M0.68,0.05 C0.82,0.0 1.0,0.1 0.98,0.35
+                         C0.96,0.55 0.88,0.78 0.72,0.9
+                         C0.55,1.0 0.3,1.0 0.15,0.88
+                         C0.0,0.75 0.0,0.5 0.04,0.3
+                         C0.08,0.1 0.5,0.1 0.68,0.05 Z"/>
+            </clipPath>
+            <clipPath id="image-mask-2" clipPathUnits="objectBoundingBox">
+                <path d="M0.5,0.02 C0.72,0.0 0.96,0.08 0.99,0.3
+                         C1.0,0.52 0.92,0.82 0.72,0.93
+                         C0.52,1.0 0.26,0.98 0.1,0.84
+                         C-0.02,0.7 0.0,0.44 0.05,0.25
+                         C0.1,0.06 0.3,0.04 0.5,0.02 Z"/>
+            </clipPath>
+            <clipPath id="image-mask-3" clipPathUnits="objectBoundingBox">
+                <path d="M0.38,0.03 C0.58,0.0 0.88,0.05 0.96,0.28
+                         C1.0,0.48 0.9,0.74 0.75,0.88
+                         C0.58,1.0 0.3,1.0 0.14,0.9
+                         C0.0,0.78 0.02,0.52 0.06,0.3
+                         C0.1,0.08 0.2,0.06 0.38,0.03 Z"/>
+            </clipPath>
+            <clipPath id="image-mask-4" clipPathUnits="objectBoundingBox">
+                <path d="M0.2,0.08 C0.4,0.0 0.65,0.02 0.82,0.1
+                         C0.98,0.18 1.0,0.4 0.96,0.62
+                         C0.92,0.84 0.74,0.98 0.5,1.0
+                         C0.26,1.0 0.06,0.88 0.02,0.65
+                         C-0.02,0.42 0.02,0.16 0.2,0.08 Z"/>
+            </clipPath>
+        </defs>
+    </svg>
+
         <section id="masonry">
-            <h3>Masonry Grid</h3>
             <div class="masonry">
-                <img src="images/desire stairs.jpg" alt="Desire Stairs" class="masonry-item">
-                <img src="images/dog statue.jpg" alt="Dog Statue Relief" class="masonry-item">
-                <img src="images/door handle 1.jpg" alt="Door Handles" class="masonry-item">
-                <img src="images/small desire path.jpg" alt="Desire Path" class="masonry-item">
-                <img src="images/middle seat.jpg" alt="Middle Seat" class="masonry-item">
-                <img src="images/keyboard.jpg" alt="Keyboard" class="masonry-item">
+                <img src="images/desire stairs.jpg"     alt="Desire Stairs"     class="masonry-item tall evolution"
+                     data-title="Desire Stairs" data-category="Evolution"
+                     data-description="Desire stairs are informal paths worn into the landscape by repeated foot traffic, bypassing official routes. Over time, the pressure of countless footsteps compresses the earth and strips away vegetation, leaving a permanent mark that reveals how people truly want to move through space.">
+                <img src="images/dog statue.jpg"        alt="Dog Statue Relief" class="masonry-item architectural"
+                     data-title="Dog Statue" data-category="Architectural"
+                     data-description="Bronze and stone statues in public spaces bear the wear of generations of hands. Certain spots — a nose, a paw, a shoulder — are rubbed smooth and bright by visitors seeking luck or simply reaching out to touch. The surface records every contact, accumulating meaning through repetition.">
+                <img src="images/door handle 1.jpg"     alt="Door Handles"      class="masonry-item small repetitive-wear"
+                     data-title="Door Handle" data-category="Repetitive Wear"
+                     data-description="A door handle is one of the most touched objects in any building. Daily use polishes the metal unevenly — the grip zone worn to a mirror sheen while surrounding areas retain their original finish. The handle becomes a fossil of routine, shaped by the collective pressure of thousands of hands over years.">
+                <img src="images/small desire path.jpg" alt="Desire Path"       class="masonry-item tall environmental"
+                     data-title="Desire Path" data-category="Environmental"
+                     data-description="A desire path forms where the shortest or most intuitive route diverges from the planned one. Worn into grass or soil by walkers choosing their own way, these lines are a form of collective editing — the landscape slowly revised by persistent human intention against the resistance of the ground.">
+                <img src="images/middle seat.jpg"       alt="Middle Seat"       class="masonry-item absence"
+                     data-title="Middle Seat" data-category="Absence"
+                     data-description="The middle seat of a row is often the last chosen and least used. Over time, its upholstery retains more of its original form while adjacent seats show compression and wear. The object is shaped as much by avoidance as by use — absence leaving its own kind of impression.">
+                <img src="images/keyboard.jpg"          alt="Keyboard"          class="masonry-item wide water"
+                     data-title="Keyboard" data-category="Water"
+                     data-description="Liquid spilled on a keyboard leaves residue that collects in the gaps between keys, around the letters touched most often. The accumulated oils from fingertips, combined with the occasional splash, create a topography of use — a record of which thoughts were typed most frequently.">
             </div>
         </section>
 
 <script>
-var grid = document.querySelector('.grid');
+    $(".filter-btn").click(function () {
+        var f = $(this).data("filter");
+        $(f).fadeToggle(300);
+        $(this).toggleClass("active");
+    });
 
-var msnry = new Masonry(grid, {
-  itemSelector: '.grid-item',
-  columnWidth: 200,
-  gutter: 10
-});
+    const masks = ['image-mask-1', 'image-mask-2', 'image-mask-3', 'image-mask-4'];
+    $(".masonry-item").each(function () {
+        const picked = masks[Math.floor(Math.random() * masks.length)];
+        $(this).css('clip-path', `url(#${picked})`);
+    });
+
+    $(".masonry-item").click(function () {
+        var params = new URLSearchParams({
+            src:         $(this).attr("src").replace("images/", ""),
+            title:       $(this).data("title"),
+            category:    $(this).data("category"),
+            description: $(this).data("description")
+        });
+        window.location.href = "detail.html?" + params.toString();
+    });
 </script>
+
 
 </body>
 </html>

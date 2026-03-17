@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMORY FOAM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik+Maps&family=Rubik+Puddles&family=Rubik+Spray+Paint&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+
+    <header class="banner">
+        <div class="banner-top">
+            <h1><strong>MEMORY FOAM</strong></h1>
+            <h2>Archive of the Lasting Effects on Earth left by Different Types of Pressure</h2>
+        </div>
+        <div class="banner-actions">
+            <button class="banner-btn" onclick="window.location.href='about.html'">ABOUT</button>
+            <button class="banner-btn" onclick="history.back()">BACK</button>
+        </div>
+    </header>
+
+    <!-- SVG blob clip shapes — add or edit paths to create new shapes -->
+    <svg width="0" height="0" style="position:absolute">
+        <defs>
+            <!-- blob 1: leans right, wider top -->
+            <clipPath id="image-mask-1" clipPathUnits="objectBoundingBox">
+                <path d="M0.68,0.05 C0.82,0.0 1.0,0.1 0.98,0.35
+                         C0.96,0.55 0.88,0.78 0.72,0.9
+                         C0.55,1.0 0.3,1.0 0.15,0.88
+                         C0.0,0.75 0.0,0.5 0.04,0.3
+                         C0.08,0.1 0.5,0.1 0.68,0.05 Z"/>
+            </clipPath>
+            <!-- blob 2: rounder, centered -->
+            <clipPath id="image-mask-2" clipPathUnits="objectBoundingBox">
+                <path d="M0.5,0.02 C0.72,0.0 0.96,0.08 0.99,0.3
+                         C1.0,0.52 0.92,0.82 0.72,0.93
+                         C0.52,1.0 0.26,0.98 0.1,0.84
+                         C-0.02,0.7 0.0,0.44 0.05,0.25
+                         C0.1,0.06 0.3,0.04 0.5,0.02 Z"/>
+            </clipPath>
+            <!-- blob 3: leans left, taller -->
+            <clipPath id="image-mask-3" clipPathUnits="objectBoundingBox">
+                <path d="M0.38,0.03 C0.58,0.0 0.88,0.05 0.96,0.28
+                         C1.0,0.48 0.9,0.74 0.75,0.88
+                         C0.58,1.0 0.3,1.0 0.14,0.9
+                         C0.0,0.78 0.02,0.52 0.06,0.3
+                         C0.1,0.08 0.2,0.06 0.38,0.03 Z"/>
+            </clipPath>
+            <!-- blob 4: wide and squat -->
+            <clipPath id="image-mask-4" clipPathUnits="objectBoundingBox">
+                <path d="M0.2,0.08 C0.4,0.0 0.65,0.02 0.82,0.1
+                         C0.98,0.18 1.0,0.4 0.96,0.62
+                         C0.92,0.84 0.74,0.98 0.5,1.0
+                         C0.26,1.0 0.06,0.88 0.02,0.65
+                         C-0.02,0.42 0.02,0.16 0.2,0.08 Z"/>
+            </clipPath>
+        </defs>
+    </svg>
+
+    <main class="detail-page">
+        <h3 class="detail-heading" id="detail-heading"></h3>
+        <img class="detail-image" id="detail-image" src="" alt="">
+        <p class="detail-description" id="detail-description"></p>
+        <a class="detail-learn-more" id="detail-learn-more" href="#">LEARN MORE</a>
+    </main>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const title = params.get('title') || '';
+        const category = params.get('category') || '';
+        const src = params.get('src') || '';
+        const description = params.get('description') || '';
+
+        document.getElementById('detail-heading').textContent = category.toUpperCase() + ': ' + title;
+        document.getElementById('detail-image').src = 'images/' + src;
+        document.getElementById('detail-image').alt = title;
+        document.getElementById('detail-description').textContent = description;
+        document.title = 'MEMORY FOAM — ' + title;
+
+        const masks = ['image-mask-1', 'image-mask-2', 'image-mask-3', 'image-mask-4'];
+        const picked = masks[Math.floor(Math.random() * masks.length)];
+        document.getElementById('detail-image').style.clipPath = `url(#${picked})`;
+    </script>
+
+</body>
+</html>
