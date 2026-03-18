@@ -35,9 +35,9 @@ body {
 }
 
 .banner-btn {
-    background: #EFF1ED;
-    border: 1px solid #EFF1ED;
-    color: #727748;
+    background: #BCBD8F;
+    border: 1px solid #BCBD8F;
+    color: #726254;
     border-radius: 999px;
     padding: 4px 16px;
     font-family: "Lilita One", sans-serif;
@@ -62,7 +62,7 @@ h2 {
     color: #BCBD8F;
     font-size: 15px;
     font-family: "Rubik", sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     margin: 0;
 }
 .filter-nav {
@@ -80,9 +80,9 @@ h2 {
 }
 
 .filter-btn {
-    background: #727748;
+    background: #726254;
     border: transparent;
-    color: #EFF1ED;
+    color: #BCBD8F;
     border-radius: 999px;
     padding: 8px 40px;
     font-family: "Lilita One", sans-serif;
@@ -94,8 +94,8 @@ h2 {
 }
 
 .filter-btn.active {
-    background-color: #727748;
-    color: #383D23;
+    background-color: #BCBD8F;
+    color: #726254;
 }
 
 /* Page sections — span all 12 columns by default */
@@ -114,11 +114,12 @@ h2 {
 
 /* --- size classes --- */
 .masonry-item           { grid-column: span 2; grid-row: span 2; /* default */ }
-.masonry-item.wide      { grid-column: span 4; grid-row: span 2;}
+.masonry-item.wide      { grid-column: span 5; grid-row: span 2;}
 .masonry-item.square     { grid-column: span 3; grid-row: span 3;}
 .masonry-item.tall      { grid-row: span 2; grid-row: span 4;}
-.masonry-item.large     { grid-column: span 6; grid-row: span 4; }
+.masonry-item.large     { grid-column: span 5; grid-row: span 4; }
 .masonry-item.small     { grid-column: span 3; grid-row: span 2; }
+.masonry-item.bigtall     { grid-column: span 3; grid-row: span 5; }
 
 
 .masonry-item {
@@ -152,9 +153,9 @@ h2 {
 }
 
 .detail-heading {
-    font-family: "Rubik", sans-serif;
-    font-size: 22px;
-    font-weight: 700;
+    font-family: "Rubik Dirt", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
     color: #BCBD8F;
     text-align: center;
     margin: 0 0 32px;
@@ -162,8 +163,8 @@ h2 {
 }
 
 .detail-image {
-    border-color: #726254;
-    border: 10px solid #726254;
+    /* border-color: #726254; */
+    /* border: 10px solid #726254; */
     display: block;
     width: 55%;
     aspect-ratio: 4 / 3;
@@ -183,6 +184,16 @@ h2 {
     text-align: center;
 }
 
+.detail-description2 {
+    font-family: "Rubik", sans-serif;
+    font-size: 14px;
+    color: #BCBD8F;
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto 24px;
+    text-align: center;
+}
+
 .detail-learn-more {
     font-family: "Rubik", sans-serif;
     font-size: 14px;
@@ -190,8 +201,10 @@ h2 {
     color: #BCBD8F;
     text-decoration: none;
     letter-spacing: 0.06em;
-    margin: auto;
+    margin: 0 auto 24px;
     display: block;
+    max-width: 800px;
+    text-align: center;
 }
 
 .detail-learn-more:hover {

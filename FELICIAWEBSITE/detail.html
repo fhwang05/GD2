@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik+Maps&family=Rubik+Puddles&family=Rubik+Spray+Paint&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./images/FAVICON.png">
     <link rel="stylesheet" href="./main.css">
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
 
@@ -15,8 +16,8 @@
 
     <header class="banner">
         <div class="banner-top">
-            <h1><strong>MEMORY FOAM</strong></h1>
-            <h2>Archive of the Lasting Effects on Earth left by Different Types of Pressure</h2>
+            <h1>MEMORY FOAM</h1>
+            <h2>ARCHIVE OF THE LASTING EFFECTS ON EARTH LEFT BY DIFFERENT TYPES OF PRESSURE</h2>
         </div>
         <div class="banner-actions">
             <button class="banner-btn" onclick="window.location.href='about.html'">ABOUT</button>
@@ -59,6 +60,28 @@
                          C0.26,1.0 0.06,0.88 0.02,0.65
                          C-0.02,0.42 0.02,0.16 0.2,0.08 Z"/>
             </clipPath>
+            <clipPath id="image-mask-5" clipPathUnits="objectBoundingBox">
+                <path d="M0.75,0.05 C0.9,0.05 1.0,0.15 0.95,0.35
+                         C0.9,0.55 0.75,0.8 0.5,0.95
+                         C0.3,0.98 0.1,0.85 0.05,0.65
+                         C0.0,0.4 0.1,0.15 0.35,0.08
+                         C0.5,0.03 0.65,0.05 0.75,0.05 Z"/>
+            </clipPath>
+            <clipPath id="image-mask-6" clipPathUnits="objectBoundingBox">
+                <path d="M0.5,0.02 C0.68,0.0 0.85,0.1 0.92,0.28
+                         C0.97,0.42 0.92,0.6 0.82,0.75
+                         C0.7,0.88 0.52,0.96 0.35,0.96
+                         C0.18,0.96 0.05,0.88 0.02,0.75
+                         C-0.02,0.6 0.02,0.42 0.15,0.28
+                         C0.25,0.1 0.38,0.02 0.5,0.02 Z"/>
+            </clipPath>
+            <clipPath id="image-mask-7" clipPathUnits="objectBoundingBox">
+                <path d="M0.6,0.08 C0.75,0.05 0.9,0.12 0.95,0.3
+                         C0.98,0.48 0.88,0.68 0.68,0.82
+                         C0.5,0.92 0.28,0.88 0.15,0.72
+                         C0.05,0.58 0.08,0.38 0.25,0.22
+                         C0.38,0.1 0.48,0.08 0.6,0.08 Z"/>
+            </clipPath>
         </defs>
     </svg>
 
@@ -75,6 +98,8 @@
         const category = params.get('category') || '';
         const src = params.get('src') || '';
         const description = params.get('description') || '';
+        const link = params.get('link') || '';
+        const learnMore = document.getElementById('detail-learn-more');
 
         document.getElementById('detail-heading').textContent = category.toUpperCase() + ': ' + title;
         document.getElementById('detail-image').src = 'images/' + src;
@@ -82,7 +107,17 @@
         document.getElementById('detail-description').textContent = description;
         document.title = 'MEMORY FOAM — ' + title;
 
-        const masks = ['image-mask-1', 'image-mask-2', 'image-mask-3', 'image-mask-4'];
+        if (link) {
+            learnMore.style.display = 'block';
+            learnMore.textContent = 'LEARN MORE';
+            learnMore.href = link;
+            learnMore.target = '_blank';
+            learnMore.rel = 'noopener noreferrer';
+        } else {
+            learnMore.style.display = 'none';
+        }
+
+        const masks = ['image-mask-1', 'image-mask-2', 'image-mask-3', 'image-mask-4', 'image-mask-5', 'image-mask-6', 'image-mask-7'];
         const picked = masks[Math.floor(Math.random() * masks.length)];
         document.getElementById('detail-image').style.clipPath = `url(#${picked})`;
     </script>
