@@ -1,10 +1,7 @@
 $(".filters button").click(function () {
-    
-    f = $(this).data("year");
-    $(f).fadeToggle(500);
-    // get the year that is associated with the button
-    // find an element that has that year 
-    // hide that element
+    const yearClass = $(this).data("year");
 
-
-})
+    // show matched records and hide all other records
+    $(".record").filter(yearClass).fadeIn(500);
+    $(".record").not(yearClass).fadeOut(500);
+});
