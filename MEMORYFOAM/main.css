@@ -1,3 +1,7 @@
+:root {
+    --nav-btn-scale: 1;
+}
+
 body {
     --outer-columns: 1;
     --layout-columns: 12;
@@ -9,7 +13,8 @@ body {
     --grid-gutter: 10px;
     --grid-row-size: 100px;
     --grid-template-rows: 40;
-    --footer-reveal-height: 260px;
+    /* Manual footer reveal space: increase/decrease this while designing footer. */
+    --footer-reveal-height: 620px;
     background-color: #6F6D5C;
     margin: 0;
     position: relative;
@@ -98,14 +103,14 @@ body.no-banner-blur::before {
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .banner-top {
     display: flex;
     align-items: last baseline;
     gap: 24px;
+    text-align: left;
 }
 
 .banner-actions {
@@ -119,16 +124,16 @@ body.no-banner-blur::before {
     border: transparent;
     color: #242816;
     border-radius: 999px;
-    padding: 4px 16px;
+    padding: calc(4px * var(--nav-btn-scale)) calc(16px * var(--nav-btn-scale));
     font-family: "Rubik", sans-serif;
     font-weight: 400;
-    font-size: 12px;
-    letter-spacing: 1.5px;
+    font-size: calc(12px * var(--nav-btn-scale));
+    letter-spacing: calc(1.5px * var(--nav-btn-scale));
     cursor: pointer;
     margin-top: 5px;
 }
 
-h1 {
+.banner h1 {
     color: #D6D6B1;
     font-size: 80px;
     font-family: "Rubik Maps", sans-serif;
@@ -137,12 +142,10 @@ h1 {
     margin: 0;
     line-height: 1.1;
     white-space: nowrap;
-    /* align-items: center; */
-    /* text-align: center; */
     cursor: default;
 }
 
-h2 {
+.banner h2 {
     color: #D6D6B1;
     font-size: 15px;
     font-family: "Averia Libre", sans-serif;
@@ -151,35 +154,15 @@ h2 {
     cursor: default;
 }
 
-body.no-banner-blur .banner {
-    height: 74px;
-    padding-block: 6px;
-}
-
-body.no-banner-blur .banner-top {
-    gap: 16px;
-}
-
-body.no-banner-blur .banner h1 {
-    font-size: 52px;
-}
-
-body.no-banner-blur .banner h2 {
-    font-size: 12px;
-}
-
-body.no-banner-blur .banner-btn {
-    font-size: 13px;
-    padding: 3px 12px;
-}
-
 .filter-nav {
     position: fixed;
-    top: 90px;
+    top: var(--banner-offset, 90px);
     left: 0;
     width: 100%;
     z-index: 999;
     display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
     justify-content: center;
     gap: var(--filter-nav-gap);
     padding: 12px 100px;
@@ -193,24 +176,38 @@ body.no-banner-blur .banner-btn {
     border: transparent;
     color: #D6D6B1;
     border-radius: 999px;
-    padding: 10px;
-    padding-inline: var(--filter-btn-padding-inline-start) var(--filter-btn-padding-inline-end);
+    padding: calc(10px * var(--nav-btn-scale));
+    padding-inline: calc(var(--filter-btn-padding-inline-start) * var(--nav-btn-scale)) calc(var(--filter-btn-padding-inline-end) * var(--nav-btn-scale));
     font-family: "Rubik", sans-serif;
     font-weight: 400;
-    font-size: 12px;
-    letter-spacing: 0.1em;
+    font-size: calc(12px * var(--nav-btn-scale));
+    letter-spacing: calc(1.2px * var(--nav-btn-scale));
     cursor: pointer;
     margin-top: 5px;
     /* min-width: 120px;
     max-width: 220px; */
     /* width: 150px; */
-    transition: padding 0.2s ease;
+    transition: padding 0.2s ease, font-size 0.2s ease, letter-spacing 0.2s ease;
     /* margin-bottom: 10px; */
+}
+
+.filter-btn,
+.filter-nav .banner-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
 }
 
 .filter-btn.active {
     background-color: #5a584c;
     color: #878472;
+}
+
+.filter-btn:focus-visible,
+.banner-btn:focus-visible,
+.to-top-btn:focus-visible,
+.footer-mark:focus-visible {
+    outline: 2px solid #3F3F37;
+    outline-offset: 2px;
 }
 
 
@@ -222,8 +219,8 @@ body.no-banner-blur .banner-btn {
     margin-top: 5rem;
     grid-column: 2 / -2;
     position: relative;
-    z-index: 1;
-    padding: 150px 360px 20px;
+    z-index: 3;
+    padding: var(--masonry-top-offset, 150px) 360px 20px;
     margin-bottom: var(--footer-reveal-height);
     background-color: #6F6D5C;
 }
@@ -238,12 +235,13 @@ body.no-banner-blur .banner-btn {
 }
 
 .home-page .footprint-layer {
-    z-index: 2;
+    z-index: 20;
 }
 
 .home-page .masonry {
     position: relative;
-    z-index: 3;
+    z-index: 4;
+    isolation: isolate;
 }
 
 .footer {
@@ -256,18 +254,81 @@ body.no-banner-blur .banner-btn {
     box-sizing: border-box;
     z-index: 0;
     margin: 0;
-    padding: 22px 360px 28px;
-    text-align: center;
-    color: #5a584c;
+    padding: 24px 360px 28px;
+    color: #374739;
     font-family: "Rubik", sans-serif;
     font-size: 12px;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.02em;
 }
 
-.footer p {
-    margin: 0;
-    max-width: 980px;
+.footer-content {
+    display: grid;
+    grid-template-columns: minmax(260px, 1.15fr) minmax(320px, 1.2fr);
+    gap: clamp(20px, 4vw, 60px);
+    align-items: start;
+    max-width: 1120px;
     margin-inline: auto;
+}
+
+.footer-title {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-top: 8px;
+}
+
+.footer-mark {
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    background: #D6D6B1;
+    display: grid;
+    border: none;
+    padding: 0;
+    place-items: center;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.footer-mark img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    opacity: 0.86;
+}
+.footer-title h3 {
+    margin: 0;
+    color: #878472;
+    font-family: "Averia Libre", sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.8rem, 2vw, 2.9rem);
+    letter-spacing: 0.015em;
+    line-height: 1;
+}
+
+.footer-copy {
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    padding-top: 58px;
+}
+
+.footer-copy p {
+    margin: 0;
+    color: #6F6D5C;
+    font-size: clamp(0.7rem, 0.9vw, 1rem);
+    line-height: 1.22;
+    letter-spacing: 0;
+    text-align: left;
+    padding:px;
+}
+
+.footer-copy p+p {
+    margin-top: 14px;
+}
+
+.footer-copy strong {
+    font-weight: 700;
 }
 
 .footer-tools {
@@ -277,18 +338,6 @@ body.no-banner-blur .banner-btn {
     margin: 8px 0 10px;
     display: flex;
     justify-content: flex-end;
-}
-
-.to-top-btn {
-    background: #D6D6B1;
-    border: transparent;
-    color: #242816;
-    border-radius: 999px;
-    padding: 4px 12px;
-    font-family: "Rubik", sans-serif;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    cursor: pointer;
 }
 
 
@@ -303,6 +352,10 @@ body.no-banner-blur .banner-btn {
     .footer {
         padding-inline: 160px;
     }
+
+    .footer-copy p {
+        font-size: clamp(0.98rem, 1vw, 1.2rem);
+    }
 }
 
 @media (max-width: 900px) {
@@ -311,8 +364,27 @@ body.no-banner-blur .banner-btn {
     }
 
     .footer {
-        --footer-reveal-height: 300px;
+        --footer-reveal-height: 520px;
         padding-inline: 24px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .footer-title {
+        padding-top: 0;
+    }
+
+    .footer-copy {
+        max-width: none;
+        padding-top: 6px;
+    }
+
+    .footer-copy p {
+        font-size: 1rem;
+        line-height: 1.3;
     }
 }
 
@@ -355,6 +427,8 @@ body.no-banner-blur .banner-btn {
 
 
 .masonry-item {
+    position: relative;
+    z-index: 5;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -625,11 +699,6 @@ body.no-banner-blur .banner-btn {
     font-style: normal;
 }
 
-.rubik-puddles-regular {
-    font-family: "Rubik Puddles", system-ui;
-    font-weight: 400;
-    font-style: normal;
-}
 
 .rubik-dirt-regular {
     font-family: "Rubik Dirt", system-ui;
@@ -637,11 +706,6 @@ body.no-banner-blur .banner-btn {
     font-style: normal;
 }
 
-.lilita-one-regular {
-    font-family: "Lilita One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
 
 .averia-libre-light {
     font-family: "Averia Libre", system-ui;
@@ -679,38 +743,31 @@ body.no-banner-blur .banner-btn {
     font-style: italic;
 }
 
-.winky-sans-Winky {
-    font-family: "Winky Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-}
-
 /* --- responsive pass (homepage + detail page) --- */
 body {
     overflow-x: hidden;
 }
 
-h1 {
+.banner h1 {
     font-size: clamp(2.3rem, 8vw, 5rem);
 }
 
-h2 {
+.banner h2 {
     font-size: clamp(0.7rem, 1.5vw, 0.94rem);
 }
 
 #masonry {
-    padding-inline: clamp(16px, 5vw, 360px);
+    padding-inline: clamp(0px, calc((100vw - 1200px) / 2), 360px);
 }
 
 .footer,
 .footer-tools,
 .detail-page {
-    padding-inline: clamp(16px, 5vw, 360px);
+    padding-inline: 360px;
 }
 
 .filter-nav {
-    padding-inline: clamp(12px, 4vw, 100px);
+    padding-inline: clamp(0px, calc((100vw - 1200px) / 2), 100px);
 }
 
 /* Touch devices: avoid aggressive zoom jump. */
@@ -723,28 +780,43 @@ h2 {
 }
 
 @media (max-width: 1200px) {
+    :root {
+        --nav-btn-scale: 0.95;
+    }
+
     .banner {
         padding-inline: clamp(16px, 4vw, 80px);
     }
 
-    .masonry {
-        --layout-columns: 10;
+    .footer,
+    .footer-tools,
+    .detail-page {
+        padding-inline: 160px;
+    }
+
+    .filter-nav {
+        padding-inline: clamp(0px, calc((100vw - 1200px) / 2), 100px);
     }
 }
 
 @media (max-width: 900px) {
+    :root {
+        --nav-btn-scale: 0.9;
+    }
+
     .banner {
         top: 0;
         height: auto;
         min-height: 86px;
         padding: 8px 16px 6px;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .banner-top {
         flex-direction: column;
         align-items: flex-start;
         gap: 6px;
+        text-align: left;
     }
 
     .banner h1 {
@@ -752,49 +824,20 @@ h2 {
     }
 
     .filter-nav {
-        top: 86px;
-        justify-content: flex-start;
+        justify-content: center;
         gap: 10px;
-        padding: 8px 12px 10px;
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
+        padding: 8px 24px 10px;
     }
 
     .filter-btn,
     .banner-btn {
-        flex: 0 0 auto;
-        white-space: nowrap;
         margin-top: 0;
     }
 
-    .filter-btn {
-        font-size: 11px;
-        padding: 8px 14px;
-    }
-
-    #masonry {
-        padding-top: 160px;
-    }
-
-    .masonry {
-        --layout-columns: 8;
-    }
-
-    .masonry-item {
-        grid-column: span 2;
-    }
-
-    .masonry-item.wide,
-    .masonry-item.large {
-        grid-column: span 4;
-    }
-
-    .masonry-item.square,
-    .masonry-item.small,
-    .masonry-item.bigtall {
-        grid-column: span 3;
+    .footer,
+    .footer-tools,
+    .detail-page {
+        padding-inline: 24px;
     }
 
     .detail-layout {
@@ -814,6 +857,10 @@ h2 {
 }
 
 @media (max-width: 640px) {
+    :root {
+        --nav-btn-scale: 0.85;
+    }
+
     body::before {
         height: 150px;
     }
@@ -823,54 +870,29 @@ h2 {
         padding-inline: 12px;
     }
 
+    .banner-top {
+        max-width: 100%;
+    }
+
+    .banner h1 {
+        font-size: clamp(1.7rem, 9.2vw, 2.4rem);
+        white-space: normal;
+        overflow-wrap: anywhere;
+        line-height: 1.02;
+    }
+
+    .banner h2 {
+        font-size: clamp(0.62rem, 2.5vw, 0.78rem);
+        line-height: 1.15;
+    }
+
     .filter-nav {
-        top: 76px;
         gap: 8px;
-    }
-
-    .filter-btn,
-    .banner-btn {
-        font-size: 10px;
-        letter-spacing: 0.06em;
-        padding: 7px 12px;
-    }
-
-    #masonry {
-        padding-top: 145px;
-    }
-
-    .masonry {
-        --layout-columns: 4;
-        --grid-row-size: 84px;
-        --grid-gutter: 8px;
-    }
-
-    .masonry-item {
-        grid-column: span 2;
-        grid-row: span 2;
-        border-radius: 14px;
-    }
-
-    .masonry-item.wide,
-    .masonry-item.large,
-    .masonry-item.bigtall {
-        grid-column: span 4;
-    }
-
-    .masonry-item.square,
-    .masonry-item.small,
-    .masonry-item.tall {
-        grid-column: span 2;
-    }
-
-    .masonry-item.tall,
-    .masonry-item.large,
-    .masonry-item.bigtall {
-        grid-row: span 3;
+        padding-inline: 12px;
     }
 
     .footer {
-        --footer-reveal-height: 340px;
+        --footer-reveal-height: 620px;
         font-size: 11px;
         letter-spacing: 0.08em;
     }
@@ -887,5 +909,30 @@ h2 {
 
     .detail-image {
         border-radius: 24px;
+    }
+}
+
+/* Keep masonry shape spans stable; only reduce columns once side padding is 0. */
+@media (max-width: 760px) {
+    .masonry {
+        --layout-columns: 10;
+    }
+}
+
+@media (max-width: 620px) {
+    .masonry {
+        --layout-columns: 8;
+    }
+}
+
+@media (max-width: 500px) {
+    .masonry {
+        --layout-columns: 6;
+    }
+}
+
+@media (max-width: 420px) {
+    .masonry {
+        --layout-columns: 5;
     }
 }
