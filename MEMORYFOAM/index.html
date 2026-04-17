@@ -316,8 +316,27 @@
             document.documentElement.style.setProperty('--masonry-top-offset', `${bannerTop + bannerHeight + navHeight + 20}px`);
         }
 
-        window.addEventListener('load', syncHeaderOffsets);
-        window.addEventListener('resize', syncHeaderOffsets);
+        function syncFooterOverlayState() {
+            const footer = document.querySelector('.footer');
+            if (!footer) return;
+
+            const doc = document.documentElement;
+            const footerHeight = Math.ceil(footer.getBoundingClientRect().height);
+            const viewportBottom = window.scrollY + window.innerHeight;
+            const footerRevealStart = doc.scrollHeight - footerHeight;
+
+            document.body.classList.toggle('at-footer', viewportBottom >= footerRevealStart - 2);
+        }
+
+        window.addEventListener('load', () => {
+            syncHeaderOffsets();
+            syncFooterOverlayState();
+        });
+        window.addEventListener('resize', () => {
+            syncHeaderOffsets();
+            syncFooterOverlayState();
+        });
+        window.addEventListener('scroll', syncFooterOverlayState);
 
         $(".filter-btn").click(function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -386,8 +405,14 @@
         });
 
         // Recalculate after images settle in case fonts or layout shift nav wrapping.
-        window.setTimeout(syncHeaderOffsets, 0);
-        window.setTimeout(syncHeaderOffsets, 200);
+        window.setTimeout(() => {
+            syncHeaderOffsets();
+            syncFooterOverlayState();
+        }, 0);
+        window.setTimeout(() => {
+            syncHeaderOffsets();
+            syncFooterOverlayState();
+        }, 200);
     </script>
 
 
