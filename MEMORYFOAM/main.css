@@ -13,7 +13,7 @@ body {
     --grid-gutter: 10px;
     --grid-row-size: 100px;
     --grid-template-rows: 40;
-    /* Manual footer reveal space: increase/decrease this while designing footer. */
+    /* Reserve scroll space so the fixed footer can be revealed near page bottom */
     --footer-reveal-height: 560px;
     background-color: #6F6D5C;
     margin: 0;
@@ -123,6 +123,7 @@ body.no-banner-blur::before {
 }
 
 body.no-banner-blur .banner-actions {
+    /* (detail) keep back button inside the banner and safe on narrow screens */
     position: absolute;
     right: max(8px, env(safe-area-inset-right));
     top: 50%;
@@ -233,6 +234,7 @@ body.no-banner-blur .banner-actions {
     position: relative;
     z-index: 3;
     padding: var(--masonry-top-offset, 150px) 360px 20px;
+    /* Matches footer reveal space so content can scroll above the footer */
     margin-bottom: var(--footer-reveal-height);
     background-color: #6F6D5C;
 }
@@ -275,6 +277,7 @@ body.no-banner-blur .banner-actions {
 
 body.at-footer .banner,
 body.at-footer .filter-nav {
+    /* Hide header when footer appears */
     opacity: 0;
     pointer-events: none;
 }
@@ -771,8 +774,9 @@ body.at-footer::before {
     font-style: italic;
 }
 
-/* --- responsive pass (homepage + detail page) --- */
+/* --- responsive --- */
 body {
+    /* Prevent tiny horizontal overflow from fixed/translated layers */
     overflow-x: hidden;
 }
 
@@ -798,7 +802,7 @@ body {
     padding-inline: clamp(0px, calc((100vw - 1200px) / 2), 100px);
 }
 
-/* Touch devices: avoid aggressive zoom jump. */
+/* avoid aggressive zoom jump*/
 @media (hover: none) {
     .masonry-item:hover,
     .masonry-item.hover-swap:hover {
@@ -948,9 +952,10 @@ body {
     }
 }
 
-/* Keep masonry shape spans stable; only reduce columns once side padding is 0. */
+/* Keep masonry shape spans stable; only reduce columns once side padding is 0 */
 @media (max-width: 760px) {
     .masonry {
+        /* More columns, shorter rows - smaller tiles with the same span ratios */
         --layout-columns: 12;
         --grid-row-size: 64px;
     }
