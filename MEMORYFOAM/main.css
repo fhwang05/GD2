@@ -123,8 +123,11 @@ body.no-banner-blur::before {
 }
 
 body.no-banner-blur .banner-actions {
-    position: relative;
-    left: 40px;
+    position: absolute;
+    right: max(8px, env(safe-area-inset-right));
+    top: 50%;
+    transform: translateY(-50%);
+    align-self: auto;
 }
 
 .banner-btn {
